@@ -12,7 +12,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text('Chat Screen'),
+    return Scaffold(appBar: AppBar(title: Text('Chat New Screen'),
         leading: IconButton(icon:Icon(Icons.arrow_back,//color:AppConstant.colorIcon,
         ),
             onPressed:()
