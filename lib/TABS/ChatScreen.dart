@@ -28,6 +28,17 @@ class _ChatScreenState extends State<ChatScreen> {
               indicatorColor: Colors.white,
             ),
             title: Text('User Name'),
+            leading: IconButton(icon:Icon(Icons.arrow_back,//color:AppConstant.colorIcon,
+    ),
+    onPressed:()
+        {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => MaintabScreen(selectedIndexValue: 0,)),
+          );
+        }
+    //  automaticallyImplyLeading: false,
+    ),
           ),
           body: TabBarView(
             children: [
