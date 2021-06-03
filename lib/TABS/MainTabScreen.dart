@@ -1,15 +1,19 @@
-// import 'package:erp_android_app/TABS/ChatScreen.dart';
-// import 'package:erp_android_app/TABS/SchoolInformation.dart';
-// import 'package:erp_android_app/TABS/dashBoard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_erp/ChatScreen.dart';
+import 'package:flutter_app_erp/SchoolInformation.dart';
 
+import '../DashboardScreen.dart';
+import 'SchoolInformation.dart';
+// import 'DashboardScreen.dart';
+// import 'TABS/SchoolInformation.dart';
 
+// import '../FindInstitute.dart';
 
 class MaintabScreen extends StatefulWidget {
 
   int selectedIndexValue;
 
-   MaintabScreen({Key key,this.selectedIndexValue}) : super(key: key);
+  MaintabScreen({Key key,this.selectedIndexValue}) : super(key: key);
 
   @override
   _MaintabScreenState createState() => _MaintabScreenState();
@@ -26,12 +30,12 @@ class _MaintabScreenState extends State<MaintabScreen> {
 
 
   int _selectedIndex = 0;
-  // final pageOptions =
-  // [
-  //   DashboardScreen(),
-  //   SchoolInformationScreen(),
-  //   ChatScreen(),
-  // ];
+  final pageOptions =
+  [
+    DashboardScreen(),
+    SchoolInformationScreen(),
+    ChatScreen(),
+  ];
 
 
 
@@ -79,79 +83,78 @@ class _MaintabScreenState extends State<MaintabScreen> {
   {
     return  WillPopScope(
       //onWillPop: _selectedIndex == 0 ? _onBackPressed : Text(' '),
-      onWillPop: () {  },
       child: Scaffold(
           drawer: Drawer(
             child: _buildDrawer(context),
           ),
-        key: _scaffoldKey,
+          key: _scaffoldKey,
 
-          // body: pageOptions[widget.selectedIndexValue ?? _selectedIndex ],
-          // bottomNavigationBar: Container(
-          //   width: MediaQuery.of(context).size.width,
-          //   height: bottomBarHeight,
-          //   child: _isVisible ?
-          //   BottomNavigationBar(
-          //     currentIndex:widget.selectedIndexValue ?? _selectedIndex,
-          //     onTap: (int index)
-          //     {
-          //
-          //       if(index != 0)
-          //         {
-          //           widget.selectedIndexValue = 1;
-          //         }
-          //
-          //       if(index == 0 || widget.selectedIndexValue == 0)
-          //         {
-          //           print(index);
-          //           print(widget.selectedIndexValue);
-          //           print('98 callign');
-          //           _scaffoldKey.currentState.openDrawer();
-          //         }
-          //
-          //       if(index == 1 || index == 2)
-          //         {
-          //           _isVisible = false;
-          //           bottomBarHeight = 0;
-          //         }
-          //
-          //       print(index);
-          //       print('42 ');
-          //       setState(()
-          //       {
-          //         widget.selectedIndexValue = index;
-          //
-          //         _selectedIndex = index;
-          //       }
-          //       );
-          //     },
-          //     selectedItemColor: Colors.deepOrange,
-          //     type: BottomNavigationBarType.fixed,
-          //
-          //
-          //     items: [
-          //
-          //       BottomNavigationBarItem(
-          //           icon: Icon(Icons.dashboard_rounded),
-          //           title: Text('More',style: TextStyle(fontFamily: 'Roboto',fontSize: 14))
-          //       ),
-          //      BottomNavigationBarItem(
-          //           icon: Icon(Icons.home_outlined),
-          //           title: Text('School Info',style: TextStyle(fontFamily: 'Roboto',fontSize: 14))
-          //       ),
-          //      BottomNavigationBarItem(
-          //           icon: Icon(Icons.chat),
-          //           title: Text('Chat',style: TextStyle(fontFamily: 'Roboto',fontSize: 14))
-          //       ),
-          //
-          //
-          //
-          //     ],
-          //   ) : Container(
-          //     color: Colors.white,
-          //     width: MediaQuery.of(context).size.width,
-          //   ),
-          // )
+          body: pageOptions[widget.selectedIndexValue ?? _selectedIndex ],
+          bottomNavigationBar: Container(
+            width: MediaQuery.of(context).size.width,
+            height: bottomBarHeight,
+            child: _isVisible ?
+            BottomNavigationBar(
+              currentIndex:widget.selectedIndexValue ?? _selectedIndex,
+              onTap: (int index)
+              {
+
+                if(index != 0)
+                {
+                  widget.selectedIndexValue = 1;
+                }
+
+                if(index == 0 || widget.selectedIndexValue == 0)
+                {
+                  print(index);
+                  print(widget.selectedIndexValue);
+                  print('98 callign');
+                  _scaffoldKey.currentState.openDrawer();
+                }
+
+                if(index == 1 || index == 2)
+                {
+                  _isVisible = false;
+                  bottomBarHeight = 0;
+                }
+
+                print(index);
+                print('42 ');
+                setState(()
+                {
+                  widget.selectedIndexValue = index;
+
+                  _selectedIndex = index;
+                }
+                );
+              },
+              selectedItemColor: Colors.deepOrange,
+              type: BottomNavigationBarType.fixed,
+
+
+              items: [
+
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.dashboard_rounded),
+                    title: Text('More',style: TextStyle(fontFamily: 'Roboto',fontSize: 14))
+                ),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.home_outlined),
+                    title: Text('School Info',style: TextStyle(fontFamily: 'Roboto',fontSize: 14))
+                ),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.chat),
+                    title: Text('Chat',style: TextStyle(fontFamily: 'Roboto',fontSize: 14))
+                ),
+
+
+
+              ],
+            ) : Container(
+              color: Colors.white,
+              width: MediaQuery.of(context).size.width,
+            ),
+          )
       ),
 
 

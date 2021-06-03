@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'MainTabScreen.dart';
+// import 'MainTabScreen.dart';
+import 'TABS/MainTabScreen.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key key}) : super(key: key);
@@ -12,7 +13,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text('Chat Screen'),
+    return Scaffold(appBar: AppBar(title: Text('Chat Screenn'),
         leading: IconButton(icon:Icon(Icons.arrow_back,//color:AppConstant.colorIcon,
         ),
             onPressed:()
@@ -21,8 +22,10 @@ class _ChatScreenState extends State<ChatScreen> {
                 context,
                 MaterialPageRoute(builder: (context) => MaintabScreen(selectedIndexValue: 0,)),
               );
+
             }
           //  automaticallyImplyLeading: false,
         )));
+
   }
 }

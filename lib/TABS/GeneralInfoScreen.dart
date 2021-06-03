@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // import 'DashboardScreen.dart';
 import '../DashboardScreen.dart';
+// import '../MainTabScreen.dart';
 import 'FindInstitute.dart';
 import 'MainTabScreen.dart';
 
@@ -103,6 +104,7 @@ class _InstituteState extends State<Institute> {
                   },
                 ),
               ),
+              SizedBox(height: 12,),
               SizedBox(width: screenSize.width,
                 height: 50,
                 child: ElevatedButton(
