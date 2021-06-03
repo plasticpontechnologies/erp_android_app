@@ -19,6 +19,7 @@ class _ChatScreenState extends State<ChatScreen> {
           appBar: AppBar(backgroundColor: Color.fromRGBO(222, 51, 21, 1.0),
             bottom: TabBar(
               tabs: [
+                
                 Tab(text: 'CHARTS',),
                 Tab(text: 'STAFF',),
                 Tab(text: 'STUDENT',),
