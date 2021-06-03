@@ -12,7 +12,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
-// <<<<<<< HEAD
+
     return DefaultTabController(
       length: 4,
       child: Scaffold(
@@ -32,7 +32,7 @@ class _ChatScreenState extends State<ChatScreen> {
               Tab(
                 text: 'SECTION',
               ),
-// =======
+
     return 
     DefaultTabController(
         length: 4,
