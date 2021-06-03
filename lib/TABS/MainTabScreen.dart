@@ -1,6 +1,6 @@
-import 'package:erp_android_app/TABS/ChatScreen.dart';
-import 'package:erp_android_app/TABS/SchoolInformation.dart';
-import 'package:erp_android_app/TABS/dashBoard.dart';
+// import 'package:erp_android_app/TABS/ChatScreen.dart';
+// import 'package:erp_android_app/TABS/SchoolInformation.dart';
+// import 'package:erp_android_app/TABS/dashBoard.dart';
 import 'package:flutter/material.dart';
 
 
@@ -26,12 +26,12 @@ class _MaintabScreenState extends State<MaintabScreen> {
 
 
   int _selectedIndex = 0;
-  final pageOptions =
-  [
-    DashboardScreen(),
-    SchoolInformationScreen(),
-    ChatScreen(),
-  ];
+  // final pageOptions =
+  // [
+  //   DashboardScreen(),
+  //   SchoolInformationScreen(),
+  //   ChatScreen(),
+  // ];
 
 
 
@@ -86,72 +86,72 @@ class _MaintabScreenState extends State<MaintabScreen> {
           ),
         key: _scaffoldKey,
 
-          body: pageOptions[widget.selectedIndexValue ?? _selectedIndex ],
-          bottomNavigationBar: Container(
-            width: MediaQuery.of(context).size.width,
-            height: bottomBarHeight,
-            child: _isVisible ?
-            BottomNavigationBar(
-              currentIndex:widget.selectedIndexValue ?? _selectedIndex,
-              onTap: (int index)
-              {
-
-                if(index != 0)
-                  {
-                    widget.selectedIndexValue = 1;
-                  }
-
-                if(index == 0 || widget.selectedIndexValue == 0)
-                  {
-                    print(index);
-                    print(widget.selectedIndexValue);
-                    print('98 callign');
-                    _scaffoldKey.currentState.openDrawer();
-                  }
-
-                if(index == 1 || index == 2)
-                  {
-                    _isVisible = false;
-                    bottomBarHeight = 0;
-                  }
-
-                print(index);
-                print('42 ');
-                setState(()
-                {
-                  widget.selectedIndexValue = index;
-
-                  _selectedIndex = index;
-                }
-                );
-              },
-              selectedItemColor: Colors.deepOrange,
-              type: BottomNavigationBarType.fixed,
-
-
-              items: [
-
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.dashboard_rounded),
-                    title: Text('More',style: TextStyle(fontFamily: 'Roboto',fontSize: 14))
-                ),
-               BottomNavigationBarItem(
-                    icon: Icon(Icons.home_outlined),
-                    title: Text('School Info',style: TextStyle(fontFamily: 'Roboto',fontSize: 14))
-                ),
-               BottomNavigationBarItem(
-                    icon: Icon(Icons.chat),
-                    title: Text('Chat',style: TextStyle(fontFamily: 'Roboto',fontSize: 14))
-                ),
-
-
-
-              ],
-            ) : Container(
-              color: Colors.white,
-              width: MediaQuery.of(context).size.width,
-            ),
-          )
+          // body: pageOptions[widget.selectedIndexValue ?? _selectedIndex ],
+          // bottomNavigationBar: Container(
+          //   width: MediaQuery.of(context).size.width,
+          //   height: bottomBarHeight,
+          //   child: _isVisible ?
+          //   BottomNavigationBar(
+          //     currentIndex:widget.selectedIndexValue ?? _selectedIndex,
+          //     onTap: (int index)
+          //     {
+          //
+          //       if(index != 0)
+          //         {
+          //           widget.selectedIndexValue = 1;
+          //         }
+          //
+          //       if(index == 0 || widget.selectedIndexValue == 0)
+          //         {
+          //           print(index);
+          //           print(widget.selectedIndexValue);
+          //           print('98 callign');
+          //           _scaffoldKey.currentState.openDrawer();
+          //         }
+          //
+          //       if(index == 1 || index == 2)
+          //         {
+          //           _isVisible = false;
+          //           bottomBarHeight = 0;
+          //         }
+          //
+          //       print(index);
+          //       print('42 ');
+          //       setState(()
+          //       {
+          //         widget.selectedIndexValue = index;
+          //
+          //         _selectedIndex = index;
+          //       }
+          //       );
+          //     },
+          //     selectedItemColor: Colors.deepOrange,
+          //     type: BottomNavigationBarType.fixed,
+          //
+          //
+          //     items: [
+          //
+          //       BottomNavigationBarItem(
+          //           icon: Icon(Icons.dashboard_rounded),
+          //           title: Text('More',style: TextStyle(fontFamily: 'Roboto',fontSize: 14))
+          //       ),
+          //      BottomNavigationBarItem(
+          //           icon: Icon(Icons.home_outlined),
+          //           title: Text('School Info',style: TextStyle(fontFamily: 'Roboto',fontSize: 14))
+          //       ),
+          //      BottomNavigationBarItem(
+          //           icon: Icon(Icons.chat),
+          //           title: Text('Chat',style: TextStyle(fontFamily: 'Roboto',fontSize: 14))
+          //       ),
+          //
+          //
+          //
+          //     ],
+          //   ) : Container(
+          //     color: Colors.white,
+          //     width: MediaQuery.of(context).size.width,
+          //   ),
+          // )
       ),
 
 
