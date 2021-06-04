@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_erp/ChatScreen.dart';
-import 'package:flutter_app_erp/SchoolInformation.dart';
+// import 'package:flutter_app_erp/ChatScreen.dart';
+// import 'package:flutter_app_erp/SchoolInformation.dart';
 
+import '../ChatScreen.dart';
 import '../DashboardScreen.dart';
 import 'SchoolInformation.dart';
 // import 'DashboardScreen.dart';

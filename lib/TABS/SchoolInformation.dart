@@ -17,6 +17,13 @@ class SchoolInformationScreen extends StatefulWidget
 class _SchoolInformationScreenState extends State<SchoolInformationScreen> {
 
 
+
+List arrImages = ['https://homepages.cae.wisc.edu/~ece533/images/airplane.png','https://homepages.cae.wisc.edu/~ece533/images/boat.png',
+'https://homepages.cae.wisc.edu/~ece533/images/girl.png'];
+
+
+   var arrList = [];
+
   double _currentSliderValue = 20;
 
   @override
@@ -38,22 +45,22 @@ Container(height: screenSize.height,
           crossAxisCount: 2,
 
           // Generate 100 widgets that display their index in the List.
-          children: List.generate(3, (index) {
+          children: List.generate(arrImages.length, (index) {
 
 
-            String strImageName = '';
+            var strText = 'School Info Default';
 
             if(index == 0)
               {
-                strImageName = 'assets/logo.png';
+                strText = 'School Info';
               }
-            if(index == 0)
+            if(index == 1)
             {
-              strImageName = 'assets/logo.png';
+                strText = 'School Info 2';
             }
-            if(index == 0)
+            if(index == 2)
             {
-              strImageName = 'assets/logo.png';
+                strText = 'School Info 3';
             }
             return Padding(
               padding: const EdgeInsets.all(2.0),
@@ -68,18 +75,19 @@ Container(height: screenSize.height,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children:
                           [
-                            index == 0 ?
-                            SizedBox(child: ClipRRect(
-                              borderRadius: BorderRadius.circular(25.0),
-                              child: Image.asset('assets/logo.png')),height: 50,) :
+
                             SizedBox(child: ClipRRect(
                                 borderRadius: BorderRadius.circular(25.0),
-                                child: Image.asset('assets/logo.png')),height: 50,) ,
+                                child: Image.network(arrImages[index])),height: 50,) ,
 
 
                           SizedBox(height: 4,),
 
+<<<<<<< Updated upstream
                           Text('sirisha',style: TextStyle(color: Colors.orange),)
+=======
+                          Text(strText,style: TextStyle(color: Colors.orange),)
+>>>>>>> Stashed changes
 
                         ],)
                     ),
