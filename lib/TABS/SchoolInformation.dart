@@ -79,7 +79,7 @@ Container(height: screenSize.height,
 
                           SizedBox(height: 4,),
 
-                          Text('Class',style: TextStyle(color: Colors.orange),)
+                          Text('sirisha',style: TextStyle(color: Colors.orange),)
 
                         ],)
                     ),
