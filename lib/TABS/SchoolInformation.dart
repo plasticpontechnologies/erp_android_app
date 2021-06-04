@@ -59,7 +59,7 @@ class _SchoolInformationScreenState extends State<SchoolInformationScreen> {
                       children: [
 
 
-                        Image.asset('assets/s1.jpeg',width: screenSize.width/4,
+                        Image.asset('assets/s2.jpeg',width: screenSize.width/4,
                           height: 90,),
                         SizedBox(height:12),
                         Text('Basic Details',style: TextStyle(color:  Color.fromRGBO(221, 51, 21, 1.0),
@@ -87,7 +87,7 @@ class _SchoolInformationScreenState extends State<SchoolInformationScreen> {
                       children: [
 
 
-                        Image.asset('assets/kkkk.jpeg',width: screenSize.width/4,
+                        Image.asset('assets/s3.jpeg',width: screenSize.width/4,
                           height: 90,),
                         SizedBox(height:12),
 
@@ -188,7 +188,7 @@ class _SchoolInformationScreenState extends State<SchoolInformationScreen> {
                       children: [
 
 
-                        Image.asset('assets/s3.jpeg',width: screenSize.width/4,
+                        Image.asset('assets/s1.jpeg',width: screenSize.width/4,
                           height: 120,),
                         SizedBox(height:12),
                         Text('Academic Session',style: TextStyle(color:  Color.fromRGBO(221, 51, 21, 1.0),
