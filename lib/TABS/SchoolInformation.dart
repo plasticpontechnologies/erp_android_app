@@ -83,11 +83,8 @@ Container(height: screenSize.height,
 
                           SizedBox(height: 4,),
 
-<<<<<<< Updated upstream
-                          Text('sirisha',style: TextStyle(color: Colors.orange),)
-=======
+//'sirisha',style: TextStyle(color: Colors.orange),)
                           Text(strText,style: TextStyle(color: Colors.orange),)
->>>>>>> Stashed changes
 
                         ],)
                     ),
