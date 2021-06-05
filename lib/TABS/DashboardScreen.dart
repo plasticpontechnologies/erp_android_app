@@ -39,6 +39,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         Image.assets('assets/profile.jpg'),
 */
 
+     Padding(
+       padding: const EdgeInsets.all(20.0),
+       child: SizedBox(child: Icon(Icons.verified_user)),
+     ),
+
 
 
                       ],
@@ -51,18 +56,29 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     padding: const EdgeInsets.only(top: 120,left: 20,right: 20),
                     child: Container(
                       color: Colors.white,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
 
-                        children:[
+                          children:[
 
-                        Text("Notice Board"),
-                        Text("No Notices are available!")
+                          Row(children: [
+                                               //   SizedBox(width: 4,),
+
+                          Icon(Icons.thumb_up_outlined,color: Colors.deepOrange,),
+                                                  SizedBox(width: 12,),
+
+                            Text("Notice Board",style: TextStyle(color: Colors.deepOrange),),
+                          ],),
+                          SizedBox(height: 4,),
+                          Text("No Notices are available!")
 
 
-                      ],
+                        ],
 
+                        ),
                       ),
                       height: 90.0,
                       width: screenSize.width,

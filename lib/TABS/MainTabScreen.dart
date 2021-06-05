@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_erp/SideMenuScreens/EvenetCalender.dart';
 // import 'package:flutter_app_erp/ChatScreen.dart';
 // import 'package:flutter_app_erp/SchoolInformation.dart';
+import 'package:share/share.dart';
 
-import '../ChatScreen.dart';
-import '../DashboardScreen.dart';
+import '../main.dart';
+import 'ChatScreen.dart';
+import 'DashboardScreen.dart';
 import 'SchoolInformation.dart';
 // import 'DashboardScreen.dart';
 // import 'TABS/SchoolInformation.dart';
@@ -76,6 +79,10 @@ class _MaintabScreenState extends State<MaintabScreen> {
 
                 title: Text('Event Calendar'),
                 onTap: () {
+                   Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => EventCalendarScreen()),
+                    );
                   // Update the state of the app.
                   // ...
                 },
@@ -128,6 +135,8 @@ class _MaintabScreenState extends State<MaintabScreen> {
 
                 title: Text('Share'),
                 onTap: () {
+                  Share.share('Shared Text Comes here');
+
                   // Update the state of the app.
                   // ...
                 },
@@ -137,7 +146,11 @@ class _MaintabScreenState extends State<MaintabScreen> {
 
                 title: Text('Logout'),
                 onTap: () {
-                  // Update the state of the app.
+
+                  actionDialog_Logout();
+
+                  // Update the s
+                  //tate of the app.
                   // ...
                 },
               ),
@@ -146,6 +159,66 @@ class _MaintabScreenState extends State<MaintabScreen> {
         )
     );
   }
+
+
+
+
+
+void actionDialog_Logout()
+{
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+        return AlertDialog(
+            title: Row(children: [
+
+              Icon(Icons.lock),
+
+SizedBox(width: 12,),
+              Text('Logout')
+
+            ],),
+            content:Text('After logout you will not receive any message and notes from scholl \n\nAre You Sure You Want to Exit!'),
+
+            actions: <Widget>[
+                FlatButton(
+                    onPressed: () {
+                        Navigator.of(context).pop();
+                },
+                    child: Container(
+                        //color: Colors.orange,
+                            
+                           child: Text(
+'CANCEL',
+                                style: TextStyle(color: Colors.deepOrange),
+                                ),
+                            
+                        )),
+
+                        FlatButton(
+                    onPressed: () {
+                      //  Navigator.of(context).pop();
+ Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyHomePage()),
+                    );
+
+                },
+                    child: Container(
+                            
+                           child: Text(
+'LOGOUT',
+                                style: TextStyle(color: Colors.deepOrange),
+                                ),
+                            
+                        )),
+                        
+            ],
+            );
+});
+
+
+}
 
 
   @override

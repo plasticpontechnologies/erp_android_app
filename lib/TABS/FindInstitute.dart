@@ -34,7 +34,7 @@ class _FindInstituteState extends State<FindInstitute> {
             [
               SizedBox(height: 20,),
 
-              Image.asset('assets/processed.jpeg',width: screenSize.width/4,
+              Image.asset('assets/logo.png',width: screenSize.width/4,
                 height: 130,),
 
 

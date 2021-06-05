@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'DashboardScreen.dart';
+import 'TABS/DashboardScreen.dart';
 // import 'MainTabScreen.dart';
 import 'TABS/FindInstitute.dart';
 // import 'TABS/FindInstituteScreen.dart';

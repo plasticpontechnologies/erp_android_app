@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // import 'MainTabScreen.dart';
-import 'TABS/MainTabScreen.dart';
+import 'MainTabScreen.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key key}) : super(key: key);
