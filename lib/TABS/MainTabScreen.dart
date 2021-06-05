@@ -39,7 +39,6 @@ class _MaintabScreenState extends State<MaintabScreen> {
   ];
 
 
-
   Drawer _buildDrawer(context) {
     return  Drawer(
         elevation: 20.0,
@@ -50,23 +49,93 @@ class _MaintabScreenState extends State<MaintabScreen> {
           // space to fit everything.
           child: ListView(
             // Important: Remove any padding from the ListView.
-            padding: EdgeInsets.zero,
+            padding: EdgeInsets.only(top: 24),
             children: <Widget>[
               DrawerHeader(
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  //color: Colors.blue,
+                  image: 
+                  DecorationImage(fit: BoxFit.fitHeight,image: AssetImage('assets/logo.png'),),
                 ),
-                child: Text('Drawer Header'),
+             //   child: Image.asset('assets/menu.jpeg',),
               ),
               ListTile(
-                title: Text('Item 1'),
+                leading: Icon(Icons.home,color:Colors.deepOrange),
+                title: Text('School Information'),
+
+                onTap: () {
+
+                 Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SchoolInformationScreen()),
+                    );
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.calendar_today,color:Colors.deepOrange),
+
+                title: Text('Event Calendar'),
                 onTap: () {
                   // Update the state of the app.
                   // ...
                 },
               ),
               ListTile(
-                title: Text('Item 2'),
+                leading: Icon(Icons.autorenew,color:Colors.deepOrange),
+
+                title: Text('Re-load School Data'),
+                onTap: () {
+                  // Update the state of the app.
+                  // ...
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.settings,color:Colors.deepOrange),
+
+                title: Text('Setting'),
+                onTap: () {
+                  // Update the state of the app.
+                  // ...
+                },
+              ),
+              new Divider(),
+
+                
+                Padding(padding: EdgeInsets.only(left:20,),child: Text('Other',style: TextStyle(color:Colors.grey,fontWeight: FontWeight.bold),),),
+
+
+              
+              ListTile(
+                leading: Icon(Icons.public,color:Colors.deepOrange),
+
+                title: Text('Language Setting'),
+                onTap: () {
+                  // Update the state of the app.
+                  // ...
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.star_border,color:Colors.deepOrange),
+
+                title: Text('Rate our App'),
+                onTap: () {
+                  // Update the state of the app.
+                  // ...
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.share,color:Colors.deepOrange),
+
+                title: Text('Share'),
+                onTap: () {
+                  // Update the state of the app.
+                  // ...
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.lock,color:Colors.deepOrange),
+
+                title: Text('Logout'),
                 onTap: () {
                   // Update the state of the app.
                   // ...

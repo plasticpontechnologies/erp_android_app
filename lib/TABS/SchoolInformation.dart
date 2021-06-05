@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app_erp/TABS/MainTabScreen.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // import 'TABS/SchoolInformation.dart';
@@ -34,7 +35,18 @@ List arrImages = ['https://homepages.cae.wisc.edu/~ece533/images/airplane.png','
     return Scaffold(appBar:
     AppBar(title: Text('erp project'),
       backgroundColor: Color.fromRGBO(221, 51, 21, 1.0),
-    ),
+leading: IconButton(icon:Icon(Icons.arrow_back,
+              //    color: Colors.black
+              ),
+                onPressed:() {
+
+Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MaintabScreen(selectedIndexValue: 0,)),
+                    );
+
+                }
+              ),    ),
 
       body:
 Container(height: screenSize.height,
