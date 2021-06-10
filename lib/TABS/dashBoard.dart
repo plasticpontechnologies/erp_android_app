@@ -145,7 +145,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
                           SizedBox(height: 4,),
 
-                          Text('Class',style: TextStyle(color: Colors.orange),)
+                          Text(index == 0 ? 'Class'  : 'Manage Class',style: TextStyle(color: Colors.orange),)
 
                         ],)
                     ),
