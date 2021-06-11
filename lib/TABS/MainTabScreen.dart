@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_erp/SideMenuScreens/EvenetCalender.dart';
+import 'package:flutter_app_erp/SideMenuScreens/Settings.dart';
+
 // import 'package:flutter_app_erp/ChatScreen.dart';
 // import 'package:flutter_app_erp/SchoolInformation.dart';
 import 'package:share/share.dart';
@@ -93,6 +95,10 @@ class _MaintabScreenState extends State<MaintabScreen> {
                 leading: Icon(Icons.settings, color: Colors.deepOrange),
                 title: Text('Setting'),
                 onTap: () {
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SettingScreen()),
+                  );
                   // Update the state of the app.
                   // ...
                 },
