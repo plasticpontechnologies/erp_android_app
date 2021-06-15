@@ -102,6 +102,7 @@ class _ManageFeesScreenState extends State<ManageFeesScreen> {
                             borderRadius: BorderRadius.circular(25.0),
                             child: Icon(
                               icons[index],
+                              color: colors[index],
                             )),
                         height: 70,
                       ),
