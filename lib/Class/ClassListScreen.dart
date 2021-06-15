@@ -15,6 +15,57 @@ TextEditingController classCtrl = TextEditingController();
 
   var arrClassList = ['First Year','Second Year','JAVA','ORACLE','SWIFT','DART'];
 
+List<String> arrList = ['Section List', 'Automatically Send SMS', 'Rename','Delete',];
+
+
+int iSelectedIndex;
+
+  Future<String> action_ListScreenTap() async {
+  
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            //title: Text(''),
+            content: Container(
+              width: double.minPositive,
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: arrList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ListTile(
+                    title: Text(arrList[index]),
+                    onTap: () {
+
+                      if(index == 2)
+                      {
+                        
+                        classCtrl.text = arrClassList[iSelectedIndex];
+                        action_Add_Class();
+
+                      }
+                      if(index == 3)
+                      {
+                        arrClassList.removeAt(iSelectedIndex);
+
+                        setState(() {
+
+                          arrClassList = arrClassList;
+                          Navigator.pop(context);
+
+
+
+                        });
+                      }
+                    //  Navigator.pop(context, colorList[index]);
+                    },
+                  );
+                },
+              ),
+            ),
+          );
+        });
+  }
   void action_Add_Class() {
     showDialog(
         context: context,
@@ -50,11 +101,27 @@ TextEditingController classCtrl = TextEditingController();
 
                     setState(() {
                       
-                      arrClassList.add(classCtrl.text);
+
+if(iSelectedIndex != null)
+{
+  arrClassList.removeAt(iSelectedIndex);
+
+  arrClassList.insert(iSelectedIndex, classCtrl.text);
+   arrClassList = arrClassList;
+
+                    Navigator.of(context).pop();
+}else
+{
+arrClassList.add(classCtrl.text);
+ arrClassList = arrClassList;
+}
                       
-                      arrClassList = arrClassList;
+                      
+                     
 
                     });
+
+
                     Navigator.of(context).pop();
                   },
                   child: Container(
@@ -117,6 +184,18 @@ TextEditingController classCtrl = TextEditingController();
           itemCount: arrClassList.length,
           itemBuilder: (context, index) {
         return ListTile(
+          onTap: () {
+            print('Caa');
+
+            print(index);
+
+            iSelectedIndex = index;
+
+            action_ListScreenTap();
+
+            
+
+          },
           title: Padding(
             padding: const EdgeInsets.all(1.0),
             child: Container(child: Card(child: Center(child: Padding(
@@ -153,6 +232,13 @@ TextEditingController classCtrl = TextEditingController();
       backgroundColor: Color.fromRGBO(250, 220, 175, 1.0),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+
+
+int ivalue;
+iSelectedIndex = ivalue;
+
+
+classCtrl.text = '';
 
           action_Add_Class();
 
