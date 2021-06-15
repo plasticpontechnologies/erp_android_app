@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_erp/ClassListScreen.dart';
+import 'package:flutter_app_erp/ManageFees.dart';
 import 'package:image_picker/image_picker.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -369,17 +370,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
                       return GestureDetector(
                         onTap: () {
-
                           if (index == 0) {
-                            
                             Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => ClassListScreen()),
                             );
                           }
+                          if (index == 1) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ManageFeesScreen()),
+                            );
+                          }
 
-                          
                           print('Calling $index');
                         },
                         child: Card(
