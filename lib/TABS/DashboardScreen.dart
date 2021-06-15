@@ -3,8 +3,11 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app_erp/ClassListScreen.dart';
+import 'package:flutter_app_erp/Class/ClassListScreen.dart';
 import 'package:flutter_app_erp/ManageFees.dart';
+import 'package:flutter_app_erp/StaffMain.dart';
+import 'package:flutter_app_erp/Studentmain.dart';
+
 import 'package:image_picker/image_picker.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -15,6 +18,45 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
+  List<IconData> icons = [
+    Icons.class_,
+    Icons.money,
+    Icons.money_sharp,
+    Icons.person,
+    Icons.subject,
+    Icons.person,
+    Icons.receipt,
+    Icons.supervised_user_circle_outlined,
+    Icons.home_work_outlined,
+    Icons.message,
+    Icons.time_to_leave,
+    Icons.picture_in_picture,
+    Icons.calendar_today,
+    Icons.library_books,
+    Icons.book,
+    Icons.help
+  ];
+  List<Color> colors = [
+    Colors.green,
+    Colors.purpleAccent,
+    Colors.purple,
+    Colors.blue,
+    Colors.lightGreen,
+    Colors.greenAccent,
+    Colors.redAccent,
+    Colors.orange,
+    Colors.blue,
+    Colors.blueAccent,
+    Colors.redAccent,
+    Colors.red,
+    Colors.green,
+    Colors.blueAccent,
+    Colors.purple,
+    Colors.lightBlue,
+  ];
+
+  var arrList = [];
+
   File _image;
   File doc1Image;
   String strDoc1ImageName = '';
@@ -351,23 +393,58 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   crossAxisCount: 4,
                   // Generate 100 widgets that display their index in the List.
                   children: List.generate(
-                    12,
+                    icons.length,
                     (index) {
-                      String strImageName;
-                      if (index == 0) {
-                        strImageName = 'assets/icon.jpeg';
-                      } else if (index == 1) {
-                        strImageName = 'assets/icon2.jpeg';
-                      } else if (index == 2) {
-                        strImageName = 'assets/icon3.jpeg';
-                      } else if (index == 3) {
-                        strImageName = 'assets/icon4.jpeg';
-                      } else if (index == 4) {
-                        strImageName = 'assets/icon5.jpeg';
-                      } else {
-                        strImageName = 'assets/icon3.jpeg';
-                      }
+                      var strText = 'DS';
 
+                      if (index == 0) {
+                        strText = 'Class';
+                      }
+                      if (index == 1) {
+                        strText = 'Manage Fees';
+                      }
+                      if (index == 2) {
+                        strText = 'Finance';
+                      }
+                      if (index == 3) {
+                        strText = 'Student';
+                      }
+                      if (index == 4) {
+                        strText = 'Subject';
+                      }
+                      if (index == 5) {
+                        strText = 'Staff';
+                      }
+                      if (index == 6) {
+                        strText = 'Review Log';
+                      }
+                      if (index == 7) {
+                        strText = 'User List';
+                      }
+                      if (index == 8) {
+                        strText = 'Homework';
+                      }
+                      if (index == 9) {
+                        strText = 'Communicate';
+                      }
+                      if (index == 10) {
+                        strText = 'Transport';
+                      }
+                      if (index == 11) {
+                        strText = 'Gallery';
+                      }
+                      if (index == 12) {
+                        strText = 'Time Table';
+                      }
+                      if (index == 13) {
+                        strText = 'Library';
+                      }
+                      if (index == 14) {
+                        strText = 'Exam';
+                      }
+                      if (index == 15) {
+                        strText = 'Help';
+                      }
                       return GestureDetector(
                         onTap: () {
                           if (index == 0) {
@@ -382,6 +459,20 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => ManageFeesScreen()),
+                            );
+                          }
+                          if (index == 3) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => StudentMainScreen()),
+                            );
+                          }
+                          if (index == 5) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => StaffMainScreen()),
                             );
                           }
 
@@ -399,15 +490,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 SizedBox(
                                   child: ClipRRect(
                                       borderRadius: BorderRadius.circular(25.0),
-                                      child: Image.asset(strImageName)),
+                                      child: Icon(
+                                        icons[index],
+                                        color: colors[index],
+                                      )),
                                   height: 50,
                                 ),
                                 SizedBox(
                                   height: 4,
                                 ),
                                 Text(
-                                  'Class',
-                                  style: TextStyle(color: Colors.orange),
+                                  strText,
+                                  style: TextStyle(
+                                      color: Colors.orange,
+                                      fontSize: 12.0,
+                                      fontWeight: FontWeight.bold),
                                 )
                               ],
                             )),
