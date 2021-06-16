@@ -3,8 +3,11 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app_erp/ClassListScreen.dart';
+//<<<<<<< Updated upstream
 import 'package:flutter_app_erp/ManageFees.dart';
+//=======
+import 'package:flutter_app_erp/Class/ClassListScreen.dart';
+//>>>>>>> Stashed changes
 import 'package:image_picker/image_picker.dart';
 
 class DashboardScreen extends StatefulWidget {
