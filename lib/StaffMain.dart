@@ -1,33 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_erp/TABS/MainTabScreen.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-// import 'TABS/SchoolInformation.dart';
-
-// import 'BMIDetailScreen.dart';
-
-class ManageFeesScreen extends StatefulWidget {
-  const ManageFeesScreen({Key key}) : super(key: key);
+class StaffMainScreen extends StatefulWidget {
+  const StaffMainScreen({Key key}) : super(key: key);
   @override
-  _ManageFeesScreenState createState() => _ManageFeesScreenState();
+  _StaffMainScreenState createState() => _StaffMainScreenState();
 }
 
-class _ManageFeesScreenState extends State<ManageFeesScreen> {
+class _StaffMainScreenState extends State<StaffMainScreen> {
   List<IconData> icons = [
-    Icons.money,
-    Icons.school,
-    Icons.emoji_transportation,
-    Icons.money,
-    Icons.receipt_long_outlined,
-    Icons.money
+    Icons.class_,
+    Icons.person,
+    Icons.person_add_alt_1_sharp
   ];
   List<Color> colors = [
-    Colors.purple,
-    Colors.lightGreen,
+    Colors.green,
+    Colors.purpleAccent,
     Colors.orange,
-    Colors.blue,
-    Colors.red,
-    Colors.green
   ];
 
   var arrList = [];
@@ -40,8 +29,8 @@ class _ManageFeesScreenState extends State<ManageFeesScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Manage Fees'),
-        backgroundColor: (Colors.orange),
+        title: Text('Staff'),
+        backgroundColor: Color.fromRGBO(221, 51, 21, 1.0),
         leading: IconButton(
             icon: Icon(
               Icons.arrow_back,
@@ -66,25 +55,16 @@ class _ManageFeesScreenState extends State<ManageFeesScreen> {
 
           // Generate 100 widgets that display their index in the List.
           children: List.generate(icons.length, (index) {
-            var strText = 'Manage Fee';
+            var strText = 'Staff Info';
 
             if (index == 0) {
-              strText = 'Create Fee Type';
+              strText = 'Create Staff';
             }
             if (index == 1) {
-              strText = 'Class Fee';
+              strText = 'Staff Attendance';
             }
             if (index == 2) {
-              strText = 'Transport Fee';
-            }
-            if (index == 3) {
-              strText = 'Fee Payment';
-            }
-            if (index == 4) {
-              strText = 'Fee Receipt';
-            }
-            if (index == 5) {
-              strText = 'Update Student Fee';
+              strText = 'Staff Attendance Report';
             }
             return Padding(
               padding: const EdgeInsets.all(2.0),
@@ -104,7 +84,7 @@ class _ManageFeesScreenState extends State<ManageFeesScreen> {
                               icons[index],
                               color: colors[index],
                             )),
-                        height: 70,
+                        height: 50,
                       ),
                       SizedBox(
                         height: 4,
@@ -113,7 +93,7 @@ class _ManageFeesScreenState extends State<ManageFeesScreen> {
                         strText,
                         style: TextStyle(
                             color: Colors.orange,
-                            fontSize: 18.0,
+                            fontSize: 14.0,
                             fontWeight: FontWeight.bold),
                       )
                     ],
