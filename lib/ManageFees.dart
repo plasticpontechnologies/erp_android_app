@@ -66,7 +66,7 @@ class _ManageFeesScreenState extends State<ManageFeesScreen> {
 
           // Generate 100 widgets that display their index in the List.
           children: List.generate(icons.length, (index) {
-            var strText = 'School Info Default';
+            var strText = 'Manage Fee';
 
             if (index == 0) {
               strText = 'Create Fee Type';
