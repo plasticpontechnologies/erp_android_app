@@ -35,12 +35,12 @@ List arrImages = ['https://homepages.cae.wisc.edu/~ece533/images/airplane.png','
     return Scaffold(appBar:
     AppBar(title: Text('erp project'),
       backgroundColor: Color.fromRGBO(221, 51, 21, 1.0),
-leading: IconButton(icon:Icon(Icons.arrow_back,
+          leading: IconButton(icon:Icon(Icons.arrow_back,
               //    color: Colors.black
               ),
                 onPressed:() {
 
-Navigator.push(
+                 Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => MaintabScreen(selectedIndexValue: 0,)),
                     );

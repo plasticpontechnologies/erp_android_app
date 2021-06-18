@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_erp/SchoolInformationScreens/BasicDetails.dart';
 // import 'DashboardScreen.dart';
 import 'DashboardScreen.dart';
 // import '../MainTabScreen.dart';
@@ -156,7 +157,7 @@ SizedBox(
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
-                                MaintabScreen(selectedIndexValue: 0),
+                                BasicScreen(selectedIndexValue: 0),
                           ),
                         );
                       },
