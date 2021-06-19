@@ -147,7 +147,7 @@ class _BasicScreenState extends State<BasicScreen> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-    return MaterialApp(
+    return MaterialApp(debugShowCheckedModeBanner: false,
         theme: ThemeData.dark(),
         title: "My Text Field",
         home: Scaffold(appBar: AppBar(
@@ -158,16 +158,12 @@ class _BasicScreenState extends State<BasicScreen> {
                   Icons.arrow_back, //color:AppConstant.colorIcon,
                 ),
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => MaintabScreen(
-                          selectedIndexValue: 0,
-                        )),
-                  );
+                  Navigator.pop(context);
+
                 }
               //  automaticallyImplyLeading: false,
-            )),
+            )
+            ),
 
           body: SingleChildScrollView(
             child: Column(

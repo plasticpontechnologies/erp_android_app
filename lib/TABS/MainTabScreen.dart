@@ -37,6 +37,18 @@ class _MaintabScreenState extends State<MaintabScreen> {
     ChatScreen(),
   ];
 
+  
+@override
+  // ignore: must_call_super
+  void initState(){
+
+   super.initState();
+
+
+  }
+
+
+  
   Drawer _buildDrawer(context) {
     return Drawer(
         elevation: 20.0,
@@ -203,8 +215,12 @@ class _MaintabScreenState extends State<MaintabScreen> {
         });
   }
 
+
   @override
   Widget build(BuildContext context) {
+
+
+    
     return WillPopScope(
       //onWillPop: _selectedIndex == 0 ? _onBackPressed : Text(' '),
       child: Scaffold(

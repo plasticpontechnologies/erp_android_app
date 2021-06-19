@@ -76,14 +76,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   leading: new Icon(Icons.camera),
                   title: new Text('Camera',
                       style:
-                          TextStyle(fontFamily: 'Roboto-Bold', fontSize: 20)),
+                          TextStyle(fontSize: 20)),
                   onTap: getCameraImage,
                 ),
                 new ListTile(
                   leading: new Icon(Icons.image),
                   title: new Text('Gallery',
                       style:
-                          TextStyle(fontFamily: 'Roboto-Bold', fontSize: 20)),
+                          TextStyle(fontSize: 20)),
                   onTap: getGalleryImage,
                 ),
               ],
@@ -112,9 +112,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
     final pickedFile = await picker.getImage(source: ImageSource.gallery);
     setState(() {
       if (pickedFile != null) {
+
         _image = File(pickedFile.path);
+
+        print(_image);
+
+        print(' Image is Uploading');
+
         doc1Image = _image;
         strDoc1Base64Data = base64Encode(doc1Image.readAsBytesSync());
+
       } else {
         print('No image selected.');
       }
@@ -141,6 +148,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       width: screenSize.width,
                       child: Row(
                         children: [
+
+                          _image == null ? Text('Select an image') :  Image.file(_image, height: 120.0, width: 120.0),
 /*
                         Image.assets('assets/profile.jpg'),
 */
@@ -197,6 +206,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
               SizedBox(
                 height: 4,
               ),
+
+
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
@@ -218,11 +229,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   Colors.deepOrange),
                             ),
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => DashboardScreen()),
-                              );
+
+                              openAttachments();
                             },
                           ),
                         ),
@@ -340,6 +348,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ),
                 ),
               ),
+              
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
@@ -367,6 +376,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ),
                 ),
               ),
+
               SizedBox(
                 width: screenSize.width,
                 height: 50,
@@ -387,6 +397,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   },
                 ),
               ),
+
+
               Container(
                 height: screenSize.height / 2,
                 child: GridView.count(

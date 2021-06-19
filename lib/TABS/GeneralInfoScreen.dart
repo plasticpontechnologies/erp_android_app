@@ -157,7 +157,7 @@ SizedBox(
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
-                                BasicScreen(selectedIndexValue: 0),
+                                MaintabScreen(selectedIndexValue: 0),
                           ),
                         );
                       },
